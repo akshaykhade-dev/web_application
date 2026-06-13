@@ -102,3 +102,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# ignore the entire local certificates file
+key_unlocked.pem
+cert.pem
+certificate.pfx 
+
