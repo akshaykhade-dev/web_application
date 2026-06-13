@@ -6,5 +6,5 @@ def hello_world():
     return '<h1>Hello, World!<h1>'
 
 
-app.run(ssl_context=('cert.pem','key_unlocked.pem'), port=5000)
+app.run(host="0.0.0.0", port=5000)
 
