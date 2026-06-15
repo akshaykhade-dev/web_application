@@ -1,30 +1,30 @@
 pipeline {
-          agent any
+    agent any
 
-stages {
-     stage('pull code')
-      steps {
-          checkout scm
+    stages {
+        stage('pull code') {
+            steps {
+                checkout scm
+            }
         }
-
-
-     stage ('create envirnoment')
-      steps {
-        sh 'source venv/bin/activate'
-        } 
-          
-     stage ('run command')
-      steps {
-        sh 'python app.py'
+        stage('create envirnoment') {
+        steps {
+            sh 'source venv/bin/activate'
+            }
         }
-      
-      post {
-        success {
-             echo 'Pipeline Success'
-          }
-         failure {
-            echo 'Pipeline Failed'
-             }
-}
-}
+        stage('run command') {
+        steps { 
+            sh 'python app.py'
+        }
+        
+        post {
+            success {
+                echo 'Pipeline success'
+            }
+            failure {
+                echo 'Pipeline failed'
+           }
+         }
+      }
+   }
 }
