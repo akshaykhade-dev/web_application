@@ -11,7 +11,7 @@ pipeline {
         stage('Execute Application') {
           steps {
             sh ''' 
-                pip install -r  requirements.txt
+                pip install flask
 
                 python3 -m venv venv
 
