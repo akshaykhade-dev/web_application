@@ -18,13 +18,14 @@ pipeline {
         }
       }
    }
-}
 
-post {
+   post {
         success {
             echo 'Pipeline completed successfully!'
         }
         failure {
             echo 'Pipeline execution failed.'
         }
+     }
+
 }
