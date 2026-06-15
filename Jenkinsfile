@@ -7,24 +7,24 @@ pipeline {
                 checkout scm
             }
         }
-        stage('create envirnoment') {
-        steps {
-            sh 'source venv/bin/activate'
-            }
+
+        stage('Execute Application') {
+          steps {
+            sh ''' 
+                source venv/bin/activate
+            
+                python app.py
+               '''
         }
-        stage('run command') {
-        steps { 
-            sh 'python app.py'
-        }
-        
-        post {
-            success {
-                echo 'Pipeline success'
-            }
-            failure {
-                echo 'Pipeline failed'
-           }
-         }
       }
    }
 }
+
+post {
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            echo 'Pipeline execution failed.'
+        }
+
