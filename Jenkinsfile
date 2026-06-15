@@ -11,6 +11,8 @@ pipeline {
         stage('Execute Application') {
           steps {
             sh ''' 
+                python3 -m venv venv
+
                 source venv/bin/activate
             
                 python app.py
