@@ -16,7 +16,6 @@ pipeline {
 
                 . venv/bin/activate
 
-                pip install python3
   
                 pip install -r requirements.txt
 
