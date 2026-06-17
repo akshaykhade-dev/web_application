@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Docker Build') {
           steps {  
-            sh ' docker build -t --network host $IMAGE_NAME . '
+            sh ' docker build --network host -t $IMAGE_NAME . '
             }
         }
         stage('Docker Run container') {
