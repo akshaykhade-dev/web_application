@@ -1,29 +1,26 @@
 pipeline {
     agent any
-
+          
+              environment {
+            	IMAGE_NAME = "akshay1092003/web_application"
+                          }
     stages {
         stage('pull code') {
-            steps {
+          steps {
                 checkout scm
             }
         }
-
-        stage('Execute Application') {
-          steps {
-            sh ''' 
-                
-                python3 -m venv venv
-
-                . venv/bin/activate
-
-  
-                pip install -r requirements.txt
-
-                python app.py
-               '''
+        stage('Docker Build') {
+          steps {  
+            sh ' docker build -t --network host $IMAGE_NAME . '
+            }
         }
-      }
-   }
+        stage('Docker Run container') {
+          steps {
+               sh ' docker run --network host --name web-application $IMAGE_NAME ' 
+            }
+        }   
+    }
 
    post {
         success {
@@ -33,5 +30,4 @@ pipeline {
             echo 'Pipeline execution failed.'
         }
      }
-
 }
