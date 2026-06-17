@@ -15,9 +15,15 @@ pipeline {
             sh ' docker build --network host -t $IMAGE_NAME . '
             }
         }
-        stage('Docker Run container') {
+        stage('Remove old container') {
+          steps { 
+            sh ' docker rm -f web-application || true '
+            }
+        }
+
+        stage('Run New Container') {
           steps {
-               sh ' docker run --network host --name web-application $IMAGE_NAME ' 
+            sh ' docker run --network host --name web-application $IMAGE_NAME ' 
             }
         }   
     }
