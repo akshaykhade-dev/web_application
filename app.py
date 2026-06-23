@@ -4,10 +4,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     return """
-    <h1>🚀 DevOps CI/CD Pipeline Project</h1>
-     <h3>👨‍💻 Developed By: Akshay</h3>
-    <ul>
-    
+   
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +12,7 @@ def hello_world():
 </head>
 <body>
 
-    <h1>DevOps End-to-End Project</h1>
+    <h1> 🚀 DevOps End-to-End Project</h1>
 
     <h2>Project Objective</h2>
     <p>
@@ -129,7 +126,6 @@ Monitoring Dashboard
 
 </body>
 </html>
-    </ul>
     <h3>✅ Application is running successfully!</h3>
     """
 
