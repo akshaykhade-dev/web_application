@@ -6,72 +6,27 @@ def hello_world():
     return """
     <h1>🚀 DevOps CI/CD Pipeline Project</h1>
      <h3>👨‍💻 Developed By: Akshay</h3>
-    <p>This application is deployed using Ubuntu, github, Nginx and Jenkins.</p>
-    <p>Tools used:</p>
     <ul>
     
-<h2>Project Overview</h2>
-<p>
-This project demonstrates a complete DevOps workflow using Git, GitHub,
-Docker, Jenkins, Nginx, Grafana, Loki, Promtail, and Prometheus.
-The application is deployed and managed using CI/CD automation and monitoring tools.
-</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DevOps Project Architecture</title>
+</head>
+<body>
 
-<h2>Tools and Technologies Used</h2>
+    <h1>DevOps End-to-End Project</h1>
 
-<h3>Git & GitHub</h3>
-<p>
-Git is used for version control and source code management.
-GitHub is used as the central repository to store and manage application code.
-</p>
+    <h2>Project Objective</h2>
+    <p>
+        This project demonstrates a complete DevOps workflow including source code management,
+        web application deployment, reverse proxy configuration, HTTPS setup, CI/CD automation,
+        monitoring, and log management.
+    </p>
 
-<h3>Docker</h3>
-<p>
-Docker is used to create a containerized environment for the application,
-ensuring consistent deployment across different systems.
-</p>
+    <h2>Project Workflow</h2>
 
-<h3>Jenkins</h3>
-<p>
-Jenkins is used to implement a CI/CD pipeline. Whenever code changes are pushed
-to GitHub, Jenkins automatically pulls the latest code and deploys the application.
-</p>
-
-<h3>Nginx</h3>
-<p>
-Nginx is configured as a reverse proxy server and routes incoming requests
-to the Flask application.
-</p>
-
-<h3>SSL Certificate</h3>
-<p>
-A self-signed SSL certificate is configured to enable secure HTTPS communication.
-</p>
-
-<h3>Grafana</h3>
-<p>
-Grafana is used to visualize application and server metrics through dashboards.
-</p>
-
-<h3>Loki</h3>
-<p>
-Loki is used for centralized log storage and log aggregation.
-</p>
-
-<h3>Promtail</h3>
-<p>
-Promtail collects application logs and sends them to Loki for storage and analysis.
-</p>
-
-<h3>Prometheus</h3>
-<p>
-Prometheus collects system metrics such as CPU usage, memory utilization,
-disk usage, and network statistics.
-</p>
-
-<h2>Project Workflow</h2>
-
-<pre>
+    <pre>
 Developer
     |
     v
@@ -81,21 +36,99 @@ GitHub Repository
 Jenkins CI/CD Pipeline
     |
     v
-Application Deployment
-    |
-    v
-Docker Container
+Flask Web Application
     |
     v
 Nginx Reverse Proxy
     |
-    +------> Prometheus (Metrics)
+    v
+HTTPS (Self-Signed SSL)
     |
-    +------> Promtail -> Loki (Logs)
+    +--------------------+
+    |                    |
+    v                    v
+Prometheus          Promtail
+    |                    |
+    v                    v
+Grafana             Loki
     |
     v
-Grafana Dashboards
-</pre>
+Monitoring Dashboard
+    </pre>
+
+    <h2>Tools Used</h2>
+
+    <h3>Git & GitHub</h3>
+    <p>
+        Used for version control and source code management. The application code is stored
+        and maintained in a GitHub repository.
+    </p>
+
+    <h3>Flask</h3>
+    <p>
+        Flask is used as the Python web framework to run the application.
+    </p>
+
+    <h3>Hosts File Configuration</h3>
+    <p>
+        A local domain was configured using the system hosts file to access the application
+        through a custom domain name.
+    </p>
+
+    <h3>Nginx Reverse Proxy</h3>
+    <p>
+        Nginx forwards incoming requests from the custom domain to the Flask application
+        running on the local server.
+    </p>
+
+    <h3>SSL Certificate</h3>
+    <p>
+        A self-signed SSL certificate was configured to enable HTTPS communication.
+    </p>
+
+    <h3>Jenkins</h3>
+    <p>
+        Jenkins automates deployment using a CI/CD pipeline. It pulls the latest code
+        from GitHub and redeploys the application automatically.
+    </p>
+
+    <h3>Prometheus</h3>
+    <p>
+        Prometheus collects server metrics such as CPU utilization, memory usage,
+        disk usage, and network statistics.
+    </p>
+
+    <h3>Loki</h3>
+    <p>
+        Loki is used as a centralized log storage solution for application logs.
+    </p>
+
+    <h3>Promtail</h3>
+    <p>
+        Promtail collects log files from the server and forwards them to Loki.
+    </p>
+
+    <h3>Grafana</h3>
+    <p>
+        Grafana provides dashboards for monitoring system metrics and visualizing
+        application logs collected by Prometheus and Loki.
+    </p>
+
+    <h2>Project Features</h2>
+
+    <ul>
+        <li>Version Control using Git and GitHub</li>
+        <li>Local Domain Configuration</li>
+        <li>Nginx Reverse Proxy Setup</li>
+        <li>HTTPS using Self-Signed SSL Certificate</li>
+        <li>Jenkins CI/CD Pipeline</li>
+        <li>System Monitoring with Prometheus</li>
+        <li>Centralized Logging with Loki and Promtail</li>
+        <li>Visualization and Dashboards using Grafana</li>
+    </ul>
+
+</body>
+</html>
     </ul>
     <h3>✅ Application is running successfully!</h3>
     """
